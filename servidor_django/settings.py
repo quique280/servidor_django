@@ -81,16 +81,16 @@ WSGI_APPLICATION = 'servidor_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'servidor_django',
-        'USER': 'usuario_wang',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'servidor_django',
+#        'USER': 'usuario_wang',
+#        'PASSWORD': 'root',
+#        'HOST': 'localhost',
+#        'PORT': '5432',
+#    }
+#}
 
 DATABASE_URL = os.environ['DATABASE_URL']
 
