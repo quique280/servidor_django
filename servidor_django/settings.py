@@ -92,7 +92,8 @@ WSGI_APPLICATION = 'servidor_django.wsgi.application'
 #    }
 #}
 
-DATABASE_URL = os.environ['DATABASE_URL']
+#DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = 'postgres://qncownpmzqzkvm:ee2bdedcc9e146ff9cee2a821a82c39ba2a5a4182716f032798805f9bc619bb5@ec2-54-225-196-122.compute-1.amazonaws.com:5432/d1lenhv2i6tlto'
 
 conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
