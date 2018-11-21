@@ -70,11 +70,11 @@ class WangCreateDeductionVisitor(WangVisitor):
         return self.visit(ctx.formula(0))
 
     def visitFormExpr(self, ctx):
-        list_left = self.visit(ctx.sequence(0))
-        if (not list_left):
-            list_left = []
-        list_right = self.visit(ctx.sequence(1))
-        if (not list_right):
+        list_left = self.visit(ctx.sequence(0)) if ctx.sequence(0) != None else []
+        if list_left == None:
+            list_left = [] 
+        list_right = self.visit(ctx.sequence(1)) if ctx.sequence(1) != None else []
+        if list_right == None:
             list_right = []
         return Deduction(list_left, list_right)
     

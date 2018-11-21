@@ -8,30 +8,29 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17")
-        buf.write("I\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2")
-        buf.write("\7\2\20\n\2\f\2\16\2\23\13\2\3\2\3\2\3\3\3\3\3\3\5\3\32")
-        buf.write("\n\3\3\3\3\3\3\3\3\3\3\3\5\3!\n\3\3\4\5\4$\n\4\3\5\3\5")
-        buf.write("\3\5\7\5)\n\5\f\5\16\5,\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3")
-        buf.write("\6\3\6\5\6\66\n\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6")
-        buf.write("\3\6\3\6\3\6\7\6D\n\6\f\6\16\6G\13\6\3\6\2\3\n\7\2\4\6")
-        buf.write("\b\n\2\2\2O\2\f\3\2\2\2\4 \3\2\2\2\6#\3\2\2\2\b%\3\2\2")
-        buf.write("\2\n\65\3\2\2\2\f\21\5\4\3\2\r\16\7\6\2\2\16\20\5\4\3")
-        buf.write("\2\17\r\3\2\2\2\20\23\3\2\2\2\21\17\3\2\2\2\21\22\3\2")
-        buf.write("\2\2\22\24\3\2\2\2\23\21\3\2\2\2\24\25\7\2\2\3\25\3\3")
-        buf.write("\2\2\2\26\31\5\6\4\2\27\30\7\7\2\2\30\32\5\6\4\2\31\27")
-        buf.write("\3\2\2\2\31\32\3\2\2\2\32!\3\2\2\2\33\34\5\6\4\2\34\35")
-        buf.write("\7\7\2\2\35!\3\2\2\2\36\37\7\7\2\2\37!\5\6\4\2 \26\3\2")
-        buf.write("\2\2 \33\3\2\2\2 \36\3\2\2\2!\5\3\2\2\2\"$\5\b\5\2#\"")
-        buf.write("\3\2\2\2#$\3\2\2\2$\7\3\2\2\2%*\5\n\6\2&\'\7\5\2\2\')")
-        buf.write("\5\n\6\2(&\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+\t\3")
-        buf.write("\2\2\2,*\3\2\2\2-.\b\6\1\2./\7\b\2\2/\66\5\n\6\t\60\66")
-        buf.write("\7\r\2\2\61\62\7\3\2\2\62\63\5\n\6\2\63\64\7\4\2\2\64")
-        buf.write("\66\3\2\2\2\65-\3\2\2\2\65\60\3\2\2\2\65\61\3\2\2\2\66")
-        buf.write("E\3\2\2\2\678\f\b\2\289\7\t\2\29D\5\n\6\t:;\f\7\2\2;<")
-        buf.write("\7\n\2\2<D\5\n\6\b=>\f\6\2\2>?\7\13\2\2?D\5\n\6\6@A\f")
-        buf.write("\5\2\2AB\7\f\2\2BD\5\n\6\6C\67\3\2\2\2C:\3\2\2\2C=\3\2")
-        buf.write("\2\2C@\3\2\2\2DG\3\2\2\2EC\3\2\2\2EF\3\2\2\2F\13\3\2\2")
-        buf.write("\2GE\3\2\2\2\n\21\31 #*\65CE")
+        buf.write("H\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2")
+        buf.write("\7\2\20\n\2\f\2\16\2\23\13\2\3\2\3\2\3\3\3\3\3\3\3\3\3")
+        buf.write("\3\3\3\3\3\3\3\3\3\5\3 \n\3\3\4\5\4#\n\4\3\5\3\5\3\5\7")
+        buf.write("\5(\n\5\f\5\16\5+\13\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6")
+        buf.write("\5\6\65\n\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3")
+        buf.write("\6\3\6\7\6C\n\6\f\6\16\6F\13\6\3\6\2\3\n\7\2\4\6\b\n\2")
+        buf.write("\2\2M\2\f\3\2\2\2\4\37\3\2\2\2\6\"\3\2\2\2\b$\3\2\2\2")
+        buf.write("\n\64\3\2\2\2\f\21\5\4\3\2\r\16\7\6\2\2\16\20\5\4\3\2")
+        buf.write("\17\r\3\2\2\2\20\23\3\2\2\2\21\17\3\2\2\2\21\22\3\2\2")
+        buf.write("\2\22\24\3\2\2\2\23\21\3\2\2\2\24\25\7\2\2\3\25\3\3\2")
+        buf.write("\2\2\26\27\5\6\4\2\27\30\7\7\2\2\30\31\5\6\4\2\31 \3\2")
+        buf.write("\2\2\32\33\5\6\4\2\33\34\7\7\2\2\34 \3\2\2\2\35\36\7\7")
+        buf.write("\2\2\36 \5\6\4\2\37\26\3\2\2\2\37\32\3\2\2\2\37\35\3\2")
+        buf.write("\2\2 \5\3\2\2\2!#\5\b\5\2\"!\3\2\2\2\"#\3\2\2\2#\7\3\2")
+        buf.write("\2\2$)\5\n\6\2%&\7\5\2\2&(\5\n\6\2\'%\3\2\2\2(+\3\2\2")
+        buf.write("\2)\'\3\2\2\2)*\3\2\2\2*\t\3\2\2\2+)\3\2\2\2,-\b\6\1\2")
+        buf.write("-.\7\b\2\2.\65\5\n\6\t/\65\7\r\2\2\60\61\7\3\2\2\61\62")
+        buf.write("\5\n\6\2\62\63\7\4\2\2\63\65\3\2\2\2\64,\3\2\2\2\64/\3")
+        buf.write("\2\2\2\64\60\3\2\2\2\65D\3\2\2\2\66\67\f\b\2\2\678\7\t")
+        buf.write("\2\28C\5\n\6\t9:\f\7\2\2:;\7\n\2\2;C\5\n\6\b<=\f\6\2\2")
+        buf.write("=>\7\13\2\2>C\5\n\6\6?@\f\5\2\2@A\7\f\2\2AC\5\n\6\6B\66")
+        buf.write("\3\2\2\2B9\3\2\2\2B<\3\2\2\2B?\3\2\2\2CF\3\2\2\2DB\3\2")
+        buf.write("\2\2DE\3\2\2\2E\13\3\2\2\2FD\3\2\2\2\t\21\37\")\64BD")
         return buf.getvalue()
 
 
@@ -183,43 +182,36 @@ class WangParser ( Parser ):
 
         localctx = WangParser.FormulaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_formula)
-        self._la = 0 # Token type
         try:
-            self.state = 30
+            self.state = 29
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
             if la_ == 1:
                 localctx = WangParser.FormExprContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 20
                 self.sequence()
-                self.state = 23
-                self._errHandler.sync(self)
-                _la = self._input.LA(1)
-                if _la==WangParser.LEADSTO:
-                    self.state = 21
-                    self.match(WangParser.LEADSTO)
-                    self.state = 22
-                    self.sequence()
-
-
+                self.state = 21
+                self.match(WangParser.LEADSTO)
+                self.state = 22
+                self.sequence()
                 pass
 
             elif la_ == 2:
                 localctx = WangParser.FormExprContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 25
+                self.state = 24
                 self.sequence()
-                self.state = 26
+                self.state = 25
                 self.match(WangParser.LEADSTO)
                 pass
 
             elif la_ == 3:
                 localctx = WangParser.FormExprContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 28
+                self.state = 27
                 self.match(WangParser.LEADSTO)
-                self.state = 29
+                self.state = 28
                 self.sequence()
                 pass
 
@@ -261,11 +253,11 @@ class WangParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 33
+            self.state = 32
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << WangParser.T__0) | (1 << WangParser.NOT) | (1 << WangParser.ID))) != 0):
-                self.state = 32
+                self.state = 31
                 self.listexpr()
 
 
@@ -322,17 +314,17 @@ class WangParser ( Parser ):
         try:
             localctx = WangParser.SeqExprContext(self, localctx)
             self.enterOuterAlt(localctx, 1)
-            self.state = 35
+            self.state = 34
             self.expr(0)
-            self.state = 40
+            self.state = 39
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==WangParser.COMMA:
-                self.state = 36
+                self.state = 35
                 self.match(WangParser.COMMA)
-                self.state = 37
+                self.state = 36
                 self.expr(0)
-                self.state = 42
+                self.state = 41
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -503,7 +495,7 @@ class WangParser ( Parser ):
         self.enterRecursionRule(localctx, 8, self.RULE_expr, _p)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 51
+            self.state = 50
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [WangParser.NOT]:
@@ -511,100 +503,100 @@ class WangParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 44
+                self.state = 43
                 self.match(WangParser.NOT)
-                self.state = 45
+                self.state = 44
                 self.expr(7)
                 pass
             elif token in [WangParser.ID]:
                 localctx = WangParser.IdContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 46
+                self.state = 45
                 self.match(WangParser.ID)
                 pass
             elif token in [WangParser.T__0]:
                 localctx = WangParser.ParensContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 47
+                self.state = 46
                 self.match(WangParser.T__0)
-                self.state = 48
+                self.state = 47
                 self.expr(0)
-                self.state = 49
+                self.state = 48
                 self.match(WangParser.T__1)
                 pass
             else:
                 raise NoViableAltException(self)
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 67
+            self.state = 66
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+            _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
                 if _alt==1:
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 65
+                    self.state = 64
                     self._errHandler.sync(self)
-                    la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
+                    la_ = self._interp.adaptivePredict(self._input,5,self._ctx)
                     if la_ == 1:
                         localctx = WangParser.AndExprContext(self, WangParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 53
+                        self.state = 52
                         if not self.precpred(self._ctx, 6):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
-                        self.state = 54
+                        self.state = 53
                         localctx.op = self.match(WangParser.AND)
-                        self.state = 55
+                        self.state = 54
                         self.expr(7)
                         pass
 
                     elif la_ == 2:
                         localctx = WangParser.OrExprContext(self, WangParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 56
+                        self.state = 55
                         if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
-                        self.state = 57
+                        self.state = 56
                         localctx.op = self.match(WangParser.OR)
-                        self.state = 58
+                        self.state = 57
                         self.expr(6)
                         pass
 
                     elif la_ == 3:
                         localctx = WangParser.ImplyExprContext(self, WangParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 59
+                        self.state = 58
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 60
+                        self.state = 59
                         localctx.op = self.match(WangParser.IMPLIES)
-                        self.state = 61
+                        self.state = 60
                         self.expr(4)
                         pass
 
                     elif la_ == 4:
                         localctx = WangParser.BicondExprContext(self, WangParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 62
+                        self.state = 61
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 63
+                        self.state = 62
                         localctx.op = self.match(WangParser.BICONDITIONAL)
-                        self.state = 64
+                        self.state = 63
                         self.expr(4)
                         pass
 
              
-                self.state = 69
+                self.state = 68
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input,7,self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,6,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re

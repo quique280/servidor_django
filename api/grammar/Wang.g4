@@ -7,9 +7,7 @@ grammar Wang;
 deduction: formula ('.' formula)*EOF
 ;
 
-formula:  (sequence ('=>'  sequence)?) #FormExpr
- | sequence '=>'#FormExpr
- | '=>' sequence #FormExpr
+formula:  sequence '=>' sequence #FormExpr
    
 ;
 sequence: listexpr?           
