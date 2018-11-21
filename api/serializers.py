@@ -4,6 +4,14 @@ from pruebas.models import Deduccion
 from pruebas.models import Inferencia
 from rest_framework.serializers import SerializerMethodField
 
+from api.parser.grammar.WangLexer import WangLexer
+from api.parser.grammar.WangParser import WangParser
+from api.src.visitor import WangPrintVisitor, WangCreateDeductionVisitor
+from api.src.wang import MyErrorListener
+from pruebas.src.proof import Probador
+
+from antlr4 import *
+from antlr4.error.ErrorListener import ErrorListener, ConsoleErrorListener
 
 class InferenciaSerializer(serializers.ModelSerializer):
     deduccionVieja = serializers.StringRelatedField()
@@ -18,24 +26,37 @@ class DeduccionSerializer(serializers.ModelSerializer):
         fields = ('prueba', 'afirmacion')
 
 class PruebaSerializer(serializers.ModelSerializer):
-    deducciones = DeduccionSerializer(many=True, read_only=True)
-    inferencias = InferenciaSerializer(many=True, read_only=True)
+    deducciones = DeduccionSerializer(many=True)
+    inferencias = InferenciaSerializer(many=True)
     class Meta:
         model = Prueba
         fields = ('afirmacion', 'fecha', 'deducciones', 'inferencias')
     
-    def to_internal_value(self, data):
-        return super(PruebaSerializer,self).to_internal_value(data)
-
     def create(self, validated_data):
-        inferencias_data = validated_data.pop('inferencias')
-        deducciones_data = validated_data.pop('deducciones')
-        prueba = Prueba.objects.create(**validated_data)
-        for ded_data in deducciones_data:
-            Deduccion.objects.update_or_create(prueba=prueba, **ded_data)
-        for infer_data in inferencias_data:
-            deductAnt = Deduccion.objects.get(afirmacion=infer_data.pop('deduccionVieja'), prueba=prueba)
-            deductSig = Deduccion.objects.get(afirmacion=infer_data.pop('deduccionNueva'), prueba=prueba)
-            Inferencia.objects.update_or_create(prueba=prueba, deduccionVieja=deductAnt, deduccionNueva=deductSig, **infer_data)
-        
-        return prueba
+        print(validated_data)
+        lexer = WangLexer(InputStream(validated_data.pop('afirmacion')))
+        token_stream = CommonTokenStream(lexer)
+        #Setup Parser (and own ErrorListener)
+        parser = WangParser(token_stream)
+        parser.removeErrorListeners()
+        parser.addErrorListener(MyErrorListener())
+        try:
+            tree = parser.deduction()
+        except SyntaxError as e: #TODO: Manejar mejor la excepcion
+            print(e.msg)
+            sys.exit(-1)
+        #Setup the Visitor and visit Parse tree
+        visitor = WangPrintVisitor()
+        visitor2 = WangCreateDeductionVisitor()
+        ded = visitor2.visit(tree)
+        print("*** Starts visit of data ***")
+        visitor.visit(tree)
+        print("***Formula creada***")
+        print(ded)
+        print(ded.to_formula())
+        pr = Probador(ded)
+        #print(pr.arbolPrueba)
+        pr.arbolPrueba.printear()
+        prueba, created = Prueba.objects.update_or_create(afirmacion=str(ded),
+            fecha=validated_data.pop('fecha'))
+        #return prueba

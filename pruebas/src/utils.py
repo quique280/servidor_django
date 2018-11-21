@@ -29,8 +29,8 @@ def firstOccurrence(predicate, iterable):
 def iFirstOccurrence(predicate, iterable):
     yield next((x for x in iterable if predicate(x)), None)
 
-def firstAppliedNotNone(value, funcList):
-    applied = (list(r(value)) for r in funcList)
+def firstRuleAppliedNotNone(deduct, ruleList):
+    applied = (list(r.apply(deduct)) for r in ruleList)
     return first((y for y in applied if len(y) > 0))
 
 
