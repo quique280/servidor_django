@@ -30,6 +30,13 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# Django rest framework
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication'
+    ]
+}
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -86,9 +93,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'd1lenhv2i6tlto',
         'USER': 'qncownpmzqzkvm',
-       'PASSWORD': 'ee2bdedcc9e146ff9cee2a821a82c39ba2a5a4182716f032798805f9bc619bb5',
+        'PASSWORD': 'ee2bdedcc9e146ff9cee2a821a82c39ba2a5a4182716f032798805f9bc619bb5',
         'HOST': 'ec2-54-225-196-122.compute-1.amazonaws.com',
-        'PORT': '5432',
+       'PORT': '5432',
     }
 }
 
