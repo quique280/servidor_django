@@ -35,8 +35,26 @@ class PruebaSerializer(serializers.ModelSerializer):
         fields = ('afirmacion', 'fecha', 'deducciones', 'inferencias')
     
     def to_internal_value(self, data):
+        afir = data.pop('afirmacion')
+        lexer = WangLexer(InputStream(afir))
+        token_stream = CommonTokenStream(lexer)
+        parser = WangParser(token_stream)
+        parser.removeErrorListeners()
+        parser.addErrorListener(MyErrorListener())
+        try:
+            tree = parser.deduction()
+        except SyntaxError as e:
+            print(e.msg)
+            error = {'msg': "Failed to parse"}
+            raise serializers.ValidationError(error)
+        visitor = WangCreateDeductionVisitor()
+        ded = visitor.visit(tree)
+        if Prueba.objects.filter(pk=str(ded)).exists():
+            error = {'msg': "prueba with this afirmacion already exists.","afirmacion":Prueba.objects.get(pk=str(ded))}
+            raise serializers.ValidationError(error)
         data['inferencias'] = []
         data['deducciones'] = []
+        data['afirmacion'] = str(ded)
         
         return super(PruebaSerializer,self).to_internal_value(data)
 
@@ -49,7 +67,7 @@ class PruebaSerializer(serializers.ModelSerializer):
         parser.addErrorListener(MyErrorListener())
         try:
             tree = parser.deduction()
-        except SyntaxError as e: #TODO: Manejar mejor la excepcion
+        except SyntaxError as e:
             print(e.msg)
             error = {'afirmacion': "Failed to parse"}
             raise serializers.ValidationError(error)
