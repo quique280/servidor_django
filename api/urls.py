@@ -6,7 +6,7 @@ from .views import InferenciaAPIView, InferenciaAPIDetail, InferenciaAPIAllView
 
 urlpatterns = [
     path('pruebas', PruebaAPIView.as_view()),
-    path('pruebas/<int:pk>/', PruebaAPIDetail.as_view()),
+    path('pruebas/<str:pk>/', PruebaAPIDetail.as_view()),
     path('pruebas/all', PruebaAPIAllView.as_view()),
     path('deducciones', DeduccionAPIView.as_view()),
     path('deducciones/<int:pk>/', DeduccionAPIDetail.as_view()),
