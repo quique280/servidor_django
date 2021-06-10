@@ -1,5 +1,5 @@
 antlr4-python3-runtime==4.7.1
-Django==2.1.2
+Django==2.2.24
 django-cors-headers==2.4.0
 django-js-asset==1.1.0
 djangorestframework==3.8.2
